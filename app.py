@@ -4,7 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # --- PAGE CONFIGURATION ---
-st.set_page_config(page_title="LCRA Executive Oversight", layout="wide", page_icon="⚡")
+st.set_page_config(page_title="Daily Budget Tracking", layout="wide", page_icon="⚡")
 
 # Custom CSS for "Dark Mode" Enterprise Look
 st.markdown("""
@@ -165,3 +165,4 @@ if df_status is not None:
 
 else:
     st.write("Waiting for data...")
+
