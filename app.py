@@ -142,6 +142,8 @@ if df_status is not None:
     
     # Filter Timesheets for this Project
     ts_data = df_timesheets[df_timesheets['PROJECT_ID'] == selected_prj_id_raw]
+    ts_data['WORK_DATE'] = pd.to_datetime(ts_data['WORK_DATE'])
+    ts_data['WORK_DATE'] = ts_data['WORK_DATE'].dt.strftime('%Y-%m-%d')
 
     if not ts_data.empty:
         # Metrics for this view
@@ -165,6 +167,7 @@ if df_status is not None:
 
 else:
     st.write("Waiting for data...")
+
 
 
 
