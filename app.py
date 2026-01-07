@@ -145,11 +145,11 @@ if df_status is not None:
 
     if not ts_data.empty:
         # Metrics for this view
-        total_hours = ts_data['HOURS'].sum()
+        total_hours = round(ts_data['HOURS'].sum(),2)
         avg_rate = ts_data['BILL_RATE'].mean()
         
         m1, m2, m3 = st.columns(3)
-        m1.metric("Total Hours Logged", f"{total_hours}")
+        m1.metric("Total Hours Logged", f"{total_hours:.2f}")
         m2.metric("Avg. Bill Rate", f"${avg_rate:.2f}")
         m3.metric("Contractors Active", f"{ts_data['EMPLID'].nunique()}")
         
@@ -165,6 +165,7 @@ if df_status is not None:
 
 else:
     st.write("Waiting for data...")
+
 
 
 
