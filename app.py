@@ -49,7 +49,7 @@ if df_status is not None:
     filtered_status_df = df_status[df_status['STATUS'].isin(status_filter)]
     
     # --- LEVEL 1: PORTFOLIO OVERVIEW ---
-    st.title("⚡ LCRA Executive Oversight")
+    st.title("⚡ Daily Budget Tracking")
     st.markdown("### Level 1: Portfolio Health & Financials")
 
     # Metrics
@@ -165,5 +165,6 @@ if df_status is not None:
 
 else:
     st.write("Waiting for data...")
+
 
 
